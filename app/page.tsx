@@ -10,6 +10,7 @@ import happyFarmer from "@/public/happy-farmer.jpeg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import { useState } from "react";
+import { GoFilter } from "react-icons/go";
 import { css } from "styled-system/css";
 import { Flex, styled } from "styled-system/jsx";
 import { banks } from "./data";
@@ -86,7 +87,15 @@ export default function Home() {
 
       <Main>
         <Container css={{ flexDir: "column", gap: "30px" }}>
-          <Text variant="h2">SEE WHICH FARMER BANK SUITS YOU</Text>
+          <Flex justify={"space-between"} align={"center"}>
+            <Text variant="h2">SEE WHICH FARMER BANK SUITS YOU</Text>
+            <Flex align={"start"} gap="2">
+              <GoFilter className={css({ fontSize: "lg" })} />
+              <Text variant="note">
+                Showing you results based on your location
+              </Text>
+            </Flex>
+          </Flex>
 
           <Flex
             wrap="wrap"
