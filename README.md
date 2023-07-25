@@ -1,7 +1,10 @@
 ## Getting Started
 
-First, run the development server:
-
+To run the development server, first run:
+```bash
+pnpm install
+```
+then
 ```bash
 pnpm dev
 ```
