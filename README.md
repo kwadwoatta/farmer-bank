@@ -17,7 +17,13 @@ farmer-bank-web (workspace: to be renamed to farmer-bank) /
 ```
 
 # run
-3. (in web directory) ```sh pnpm dev```
-4. (in server directory) ```sh  air -c .air.toml```
+3. (in web directory) 
+```sh
+pnpm dev
+```
+4. (in server directory)
+```sh
+air -c .air.toml
+```
 
 ### Will add a build process to make the steps above easier
