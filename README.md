@@ -12,7 +12,7 @@ farmer-bank-web
 ### Setup & run
 ```sh
 # install packages
-1. cd web && pnpm install
+1. cd web-app && pnpm install
 2. cd server && go mody download
 ```
 
