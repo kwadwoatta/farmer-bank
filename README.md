@@ -4,9 +4,9 @@ A marketplace for farmers to find banks that suit their needs
 ### About this repo
 
 ```sh
-farmer-bank-web (workspace: to be renamed to farmer-bank) /
-├── web     # web application built with
-└── server  # Webstie
+farmer-bank-web
+├── web-app  # web application built with next.js
+└── server   # server built with go and graphql
 ```
 
 ### Setup & run
