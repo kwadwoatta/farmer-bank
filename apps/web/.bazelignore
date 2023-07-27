@@ -1,0 +1,6 @@
+apps/web/node_modules
+app/.next
+bazel-out
+bazel-bin
+bazel-next.js
+bazel-testlogs

@@ -1,0 +1,20 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "graph",
+    srcs = [
+        "generated.go",
+        "resolver.go",
+        "schema.resolvers.go",
+    ],
+    embedsrcs = ["schema.graphqls"],
+    importpath = "github.com/kwadwoatta/farmer-bank-web/server/graph",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//apps/server/graph/model",
+        "@com_github_99designs_gqlgen//graphql",
+        "@com_github_99designs_gqlgen//graphql/introspection",
+        "@com_github_vektah_gqlparser_v2//:gqlparser",
+        "@com_github_vektah_gqlparser_v2//ast",
+    ],
+)
