@@ -41,7 +41,7 @@ export default function Home() {
   const { data: banksQuery } = useBanksQuery();
   const [selectedBanks, setSelectedBanks] = useState<Bank[]>([]);
 
-  const { banks: serverBanks } = banksQuery ?? {};
+  const data = banksQuery?.banks ?? banks;
 
   return (
     <>
@@ -107,7 +107,7 @@ export default function Home() {
               },
             }}
           >
-            {banks.map((bank) => (
+            {data.map((bank) => (
               <BankCard
                 key={bank.id}
                 bank={bank}
