@@ -21,5 +21,5 @@ alias pnx="pnpm nx --"
 Start the web server then the web app:
 
 ```bash
-pnx run-many -t serve -p server web --parallel=false
+pnx run-many -t serve -p server web --parallel=true
 ```
