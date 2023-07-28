@@ -17,45 +17,43 @@ import (
 
 // CreateBank is the resolver for the createBank field.
 func (r *mutationResolver) CreateBank(ctx context.Context, input model.NewBank) ([]*model.Bank, error) {
-	type Banks struct {
-		Banks []model.Bank `json:"banks"`
-	}
-
-	jsonFile, err := os.Open("data.json")
-
-	if err != nil {
-		log.Fatal("Can't open seed file")
-	}
-
-	defer jsonFile.Close()
-
-	byteValue, _ := io.ReadAll(jsonFile)
-
-	var banks Banks
-
-	err = json.Unmarshal(byteValue, &banks)
-
-	if err != nil {
-		log.Fatal("Error while trying to unmarshal seed file")
-	}
-
-	for _, bank := range banks.Banks {
-
-		r.banks = append(r.banks, &bank)
-	}
-
-	prettyBank, err := json.MarshalIndent(r.banks, "", "  ")
-	if err != nil {
-		log.Fatal("error:", err)
-	}
-
-	fmt.Print(string(prettyBank))
-
 	return r.banks, nil
 }
 
 // Banks is the resolver for the banks field.
 func (r *queryResolver) Banks(ctx context.Context) ([]*model.Bank, error) {
+	if len(r.banks) == 0 {
+
+		jsonFile, err := os.Open("data.json")
+
+		if err != nil {
+			log.Fatal("Can't open seed file")
+		}
+
+		defer jsonFile.Close()
+
+		byteValue, _ := io.ReadAll(jsonFile)
+
+		var jsonData JsonData
+
+		err = json.Unmarshal(byteValue, &jsonData)
+
+		if err != nil {
+			log.Fatal("Error while trying to unmarshal seed file")
+		}
+
+		for _, bank := range jsonData.Banks {
+			copyBank := bank
+			r.banks = append(r.banks, &copyBank)
+
+			prettyBank, _ := json.MarshalIndent(bank, "", "  ")
+			fmt.Println(string(prettyBank))
+		}
+	}
+
+	prettyBank, _ := json.MarshalIndent(r.banks, "", "  ")
+	fmt.Println(string(prettyBank))
+
 	return r.banks, nil
 }
 
