@@ -1,10 +1,15 @@
-## Getting Started
+# Farmer Bank Web
 
-To run the development server, first run:
+## Running tasks
+
+Install app dependencies:
+
 ```bash
-pnpm install
+pnpm i
 ```
-then
+
+Start the web app:
+
 ```bash
 pnpm dev
 ```
