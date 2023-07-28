@@ -1,0 +1,3 @@
+schema: http://localhost:8080/gql
+documents:
+  - src/graphql/**/*.gql
