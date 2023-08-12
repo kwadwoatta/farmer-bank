@@ -1,29 +1,25 @@
-# farmer-bank (monorepo)
-A marketplace for farmers to find banks that suit their needs
+# Farmer Bank
 
-### About this repo
+<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-```sh
-farmer-bank-web
-├── web-app  # web application built with next.js
-└── server   # server built with go and graphql
+✨ **Online marketplace to help farmers find financial products. Built with [Next.js](https://nextjs.org) and [Go](https://go.dev)** ✨
+
+## Running tasks
+
+Install workspace dependencies:
+
+```bash
+pnpm i
 ```
 
-### Setup & run
-```sh
-# install packages
-1. cd web-app && pnpm install
-2. cd server && go mody download
+Set `pnpm nx` alias for your active terminal or globally add to your shell configuration profile file:
+
+```bash
+alias pnx="pnpm nx --"
 ```
 
-# run
-3. (in web directory) 
-```sh
-pnpm dev
-```
-4. (in server directory)
-```sh
-air -c .air.toml
-```
+Start the web server then the web app:
 
-### Will add a build process to make the steps above easier
+```bash
+pnx run-many -t serve -p server web --parallel=true
+```

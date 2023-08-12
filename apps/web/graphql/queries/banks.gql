@@ -1,0 +1,13 @@
+query banks {
+  banks {
+    id
+    name
+    description
+    interestRate
+    displayImageUrl
+    contact
+    processingFee
+    googlePlusCode
+    facilities
+  }
+}

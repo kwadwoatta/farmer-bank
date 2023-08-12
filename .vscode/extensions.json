@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "bierner.color-info",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "GraphQL.vscode-graphql-syntax",
+    "GraphQL.vscode-graphql",
+    "GraphQL.vscode-graphql-execution",
+    "streetsidesoftware.code-spell-checker",
+    "nrwl.angular-console"
+  ]
+}
